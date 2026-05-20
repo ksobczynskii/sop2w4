@@ -92,7 +92,7 @@ void do_server(int port) {
         ssize_t bytes;
         if ((bytes = TEMP_FAILURE_RETRY(recvfrom(server,buf,sizeof(buf),0,(struct sockaddr*)&addr, &size))) < 0)
             ERR("recvfrom");
-        // printf("Read something! Whats should be chunk size is: %d\n", ntohl(*(int32_t*)buf));
+        printf("Read something! Whats should be chunk idx is: %d\n", ntohl(*(int32_t*)buf));
         // buf[bytes] = 0;
         int idx = getIdx(addr, conns);
         // printf("IDX = %d\n", idx);
